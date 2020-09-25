@@ -1,21 +1,31 @@
-import Home from './components/Home'
-import Welcome from './components/Welcome'
+import React from 'react'
+import Loadable from 'react-loadable'
 
+// 通用的懒加载
+const LoadingComponent = () => {
+  return (
+    <div>
+      loading...
+    </div>
+  )
+}
+const LazyLoad = (loader, loading = LoadingComponent) => {
+  return Loadable({
+    loader,
+    loading
+  })
+}
+
+// 路由配置
 const routes = [
   {
     path: '/',
-    component: Welcome,
+    component: LazyLoad(() => import('@/components/Welcome')),
     exact: true
   },
   {
-    path: '/home',
-    component: Home,
-    routes: [
-      {
-        path: '/homed',
-        component: Home
-      }
-    ]
+    path: '/login',
+    component: LazyLoad(() => import('@view/Login/Login')),
   }
 ]
 

@@ -1,7 +1,8 @@
 import React from 'react'
+import WelcomeStyle from './Welcome.module.scss'
 
-export default class Welcome extends React.Component {
-  render () {
-    return <p>Welcome component</p>
-  }
+export default function Welcome () {
+  return (
+    <p className={WelcomeStyle.title}>Welcome component</p>
+  )
 }

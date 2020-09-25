@@ -1,0 +1,8 @@
+// 局部样式
+.title {
+  color: red;
+}
+// 全局样式
+:global(.test) {
+  color: blue;
+}
