@@ -14,10 +14,17 @@ export default function Login () {
     <div className={LoginStyle.login}>
       <Card hoverable bordered={false}>
         <div className={LoginStyle.area_login}>
+          <div className={LoginStyle.area_left}>
+            博客
+          </div>
+          <div className={LoginStyle.area_right}>
             <Input placeholder="用户名" bordered={false} className="input_border_bottom" />
             <Input placeholder="密码" bordered={false} className="input_border_bottom" />
-            <Button>登录</Button>
+            <div className={LoginStyle.display_block}>
+              <Button className={LoginStyle.btn_submit}>登录</Button>
+            </div>
             <Button type="text">忘记密码</Button>
+          </div>
         </div>
       </Card>
     </div>

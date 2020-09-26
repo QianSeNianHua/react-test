@@ -3,22 +3,17 @@
 .login {
   :global {
     .ant-card {
-      width: 500px;
-      height: 300px;
       border-radius: 10px;
       box-shadow: $shadow-1-down;
+      z-index: 3;
+      cursor: default;
 
       &:hover {
         box-shadow: $shadow-3-down;
       }
     }
     .ant-card-body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // background: linear-gradient(to bottom,  #003a8c 0%,#bae7ff 100%);
+      padding: 0px;
     }
     .input_border_bottom {
       border-bottom: 1px solid #d9d9d9;
@@ -40,11 +35,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-image: url('%PUBLIC_URL%/images/home_bg.jpg');
+  background-image: url('/images/home_bg.jpg');
+  //   background-image: url('%PUBLIC_URL%/images/home_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    filter: blur(7px);
+    z-index: 2;
+  }
 }
 .area_login {
-  width: 225px;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.area_left {
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.area_right {
+  width: 200px;
+  margin-left: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .btn_submit {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.display_block {
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
 }
