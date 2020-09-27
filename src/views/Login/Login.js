@@ -11,11 +11,19 @@ import LoginCard from './components/LoginCard/LoginCard'
 import SignUpCard from './components/SignUpCard/SignUpCard'
 import LayoutCard from './components/LayoutCard/LayoutCard'
 import LoginStyle from './Login.module.scss'
+import Bus from '@/libs/EventEmitter'
 
 export default class Login extends React.Component {
   constructor () {
     super()
+    this.state = {
+      isLogin: true
+    }
     this.elLogin = React.createRef()
+    
+    Bus.on('Login:toSignUp', msg => {
+      this.triggerEvent()
+    })
   }
 
   render () {
@@ -23,13 +31,28 @@ export default class Login extends React.Component {
       <div className={LoginStyle.login}>
         <Card hoverable bordered={false}>
           <div className={LoginStyle.area_login}>
-            <LayoutCard>
+            {
+
+            }
+            <LayoutCard childEvent={this.childEvent}>
               {<span>博客</span>}
               {<LoginCard></LoginCard>}
+            </LayoutCard>
+            <LayoutCard childEvent={this.childEvent}>
+              {<span>博客</span>}
+              {<SignUpCard></SignUpCard>}
             </LayoutCard>
           </div>
         </Card>
       </div>
     )
+  }
+
+  childEvent = val => {
+    this.$child = val
+  }
+
+  triggerEvent () {
+    this.$child.play()
   }
 }

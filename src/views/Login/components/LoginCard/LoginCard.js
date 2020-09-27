@@ -9,6 +9,7 @@ import React from 'react'
 import {Button, Input, Image} from 'antd'
 import {ArrowLeftOutlined} from '@ant-design/icons'
 import ComCardStyle from '../ComCard.module.scss'
+import Bus from '@/libs/EventEmitter'
 
 export default class LoginCard extends React.Component {
   render () {
@@ -34,5 +35,6 @@ export default class LoginCard extends React.Component {
   }
 
   handleAnimateLeft = () => {
+    Bus.emit('Login:toSignUp', true)
   }
 }

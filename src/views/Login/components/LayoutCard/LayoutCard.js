@@ -29,9 +29,10 @@ export default class LayoutCard extends Component {
   }
 
   componentDidMount () {
+    this.props.childEvent(this)
     this.animation = anime({
       targets: this.elLayout.current,
-      translateX: 300,
+      translateX: 600,
       autoplay: false
     })
   }
