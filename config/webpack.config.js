@@ -301,6 +301,7 @@ module.exports = function(webpackEnv) {
         ...(modules.webpackAliases || {}),
         // 文件路径别名
         '@': path.resolve(__dirname, '../src'),
+        '@assets': path.resolve(__dirname, '../src/assets'),
         '@view': path.resolve(__dirname, '../src/views'),
         '@style': path.resolve(__dirname, '../src/styles')
       },
@@ -337,11 +338,11 @@ module.exports = function(webpackEnv) {
           use: [
             {
               options: {
-                cache: true,
+                cache: false,
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
                 resolvePluginsRelativeTo: __dirname,
-                
+                useEslintrc: true
               },
               loader: require.resolve('eslint-loader'),
             },

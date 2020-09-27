@@ -1,0 +1,93 @@
+@import '~@/assets/styles/default.scss';
+
+.card_item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  :global {
+    .input_border_bottom {
+      border-bottom: 1px solid #d9d9d9;
+      border-radius: 0px;
+
+      &:hover {
+        border-bottom: 1px solid #40a9ff;
+      }
+      &:focus {
+        border-bottom: 1px solid #40a9ff;
+        box-shadow: 0 2px 0 0 rgba(24, 144, 255, 0.2);
+      }
+    }
+    .display_block {
+      flex-grow: 1;
+      width: 100%;
+      text-align: center;
+    }
+    .flex_between {
+      display: flex;
+      justify-content: space-between;
+    
+      &>.ant-input {
+        height: 30.6px;
+        margin-right: 8px;
+        margin-top: 11.4px;
+      }
+    }
+    .posi_rela {
+      &>[data-role="left"] {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+      }
+      &>[data-role="right"] {
+        position: absolute;
+        bottom: 20px;
+        right: 15px;
+      }
+    }
+    .ant-image {
+      flex-shrink: 0;
+    }
+    .btn_size_40 {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .btn_size_42 {
+      padding-left: 16px;
+      padding-right: 40px;
+  
+      &>[role="img"] {
+        margin-right: 10px;
+      }
+    }
+    .btn_bg_yellow {
+      background-color: $yellow-default;
+      border-color: $yellow-default;
+      color: $blue-default;
+  
+      &:hover, &:focus {
+        background-color: $yellow-hover;
+        border-color: $yellow-hover;
+      }
+      &:active {
+        background-color: $yellow-click;
+        border-color: $yellow-click;
+      }
+    }
+    .btn_color_yellow {
+      color: $yellow-default;
+  
+      &:hover, &:focus {
+        color: $yellow-hover;
+      }
+      &:active {
+        color: $yellow-click;
+      }
+    }
+  }
+}

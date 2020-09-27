@@ -24,3 +24,6 @@ npm run build
 ——App.js
 ——App.scss
 ——index.js  入口
+
+## 技术
+immutable-js 数据不可变

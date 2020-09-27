@@ -1,0 +1,9 @@
+node_modules
+.history
+.vscode
+build
+config
+public
+scripts
+
+src/serviceWorker.js

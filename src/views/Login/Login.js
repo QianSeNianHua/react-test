@@ -3,30 +3,33 @@
  * @Date: 2020-09-25 10:20:16
  * @Author: xuzuntong
  * @LastEditors: xuzuntong
- * @LastEditTime: 2020-09-25 15:48:09
+ * @LastEditTime: 2020-09-27 20:18:56
  */
-import React from 'react'
-import {Button, Card, Input} from 'antd'
+import React, { Children } from 'react'
+import {Card} from 'antd'
+import LoginCard from './components/LoginCard/LoginCard'
+import SignUpCard from './components/SignUpCard/SignUpCard'
+import LayoutCard from './components/LayoutCard/LayoutCard'
 import LoginStyle from './Login.module.scss'
 
-export default function Login () {
-  return (
-    <div className={LoginStyle.login}>
-      <Card hoverable bordered={false}>
-        <div className={LoginStyle.area_login}>
-          <div className={LoginStyle.area_left}>
-            博客
+export default class Login extends React.Component {
+  constructor () {
+    super()
+    this.elLogin = React.createRef()
+  }
+
+  render () {
+    return (
+      <div className={LoginStyle.login}>
+        <Card hoverable bordered={false}>
+          <div className={LoginStyle.area_login}>
+            <LayoutCard>
+              {<span>博客</span>}
+              {<LoginCard></LoginCard>}
+            </LayoutCard>
           </div>
-          <div className={LoginStyle.area_right}>
-            <Input placeholder="用户名" bordered={false} className="input_border_bottom" />
-            <Input placeholder="密码" bordered={false} className="input_border_bottom" />
-            <div className={LoginStyle.display_block}>
-              <Button className={LoginStyle.btn_submit}>登录</Button>
-            </div>
-            <Button type="text">忘记密码</Button>
-          </div>
-        </div>
-      </Card>
-    </div>
-  )
+        </Card>
+      </div>
+    )
+  }
 }
