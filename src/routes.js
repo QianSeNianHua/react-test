@@ -26,6 +26,10 @@ const routes = [
   {
     path: '/login',
     component: LazyLoad(() => import('@view/Login/Login')),
+  },
+  {
+    path: '/test',
+    component: LazyLoad(() => import('@view/Test/Test'))
   }
 ]
 

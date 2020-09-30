@@ -1,6 +1,6 @@
 ## 简介
 
-这是一个博客网站，采用react + react-dom + react-router-dom + scss + antd + axios
+博客网站，采用react + react-dom + react-router-dom + scss + antd + axios + react-hooks
 
 ## 开始
 
@@ -19,8 +19,7 @@ npm run build
 ——components  全局组件
 ——views  页面
 ——routes.js  路由配置
-———Login  登录页
-———Signup 注册页
+———Login  登录页/注册页
 ——App.js
 ——App.scss
 ——index.js  入口
